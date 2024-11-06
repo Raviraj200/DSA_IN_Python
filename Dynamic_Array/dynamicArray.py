@@ -80,19 +80,37 @@ class MyList:
         else:
             return pos    
 
+    def sorting(self):
+        # working only  int
+        for i in range(self.n-1):
+            if self.A[i] > self.A[i+1]:
+                # print(self.A[i])
+                temp=self.A[i]
+                self.A[i]=self.A[i+1]
+                self.A[i+1]=temp
+            else:
+                return "sorry"    
+          
+
+
+
+
 
 
 
 
 list = MyList()
-list.append('a')
-list.append('b')
+# list.append('a')
+# list.append('b')
+list.append(100)
 list.append(50)
 list.append(80)
-list.remove('b')
-list.delete(3)
-list.insert(2,90)
-print(list.find('a'))
-list.clear()
-list.pop()
+# list.remove('b')
+# list.delete(3)
+# list.insert(2,90)
+# print(list.find('a'))
+# list.clear()
+# list.pop()
+print(list)
+list.sorting()
 print(list)
