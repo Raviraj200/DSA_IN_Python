@@ -17,7 +17,12 @@ class LL:
             while temp.next!=None:
                 temp = temp.next  
             temp.next =new_node
-
+    
+    def delete_head(self):
+        if self.head ==None:
+            return "Empty"
+        else:
+            self.head = self.head.next    
 
     def remove(self,key):
         if self.head.key==key:
@@ -89,6 +94,35 @@ class Dictionary:
         for i in range(capacity):
             L.append(LL())
         return L    
+    
+    def __setitem__(self,key,value):
+        self.put(key,value)
+    
+
+    def __getitem__(self,key):
+        return self.get(key)
+    
+
+    def __delitem__(self,key):
+        bucket_index = self.hash_function(key)
+        self.buckets[bucket_index].remove(key)
+
+    def __str__(self):
+        for i in self.buckets:
+            i.traverse()
+        return ""        
+
+
+    def get(self,key):
+        bucket_index = self.hash_function(key)
+        res = self.buckets[bucket_index].search(key)
+
+        if res == -1:
+            return  "Not Found"
+        else:
+            node  = self.buckets[bucket_index].get_node_at_index(res)
+            return node.value
+                
 
     def put(self,key ,value):
         bucket_index = self.hash_function(key)
@@ -107,7 +141,10 @@ class Dictionary:
             # update     
             node = self.buckets[bucket_index].get_node_at_index(node_index)
             node.value =value
+    
 
+    def __len__(self):
+        return self.size
 
     def rehash(self):
         self.capacity=self.capacity*2
@@ -146,5 +183,9 @@ d1.put("kjvnv",80)
 d1.put("jvxj",100)
 d1.put("c c ",302)
 d1.put("knkk",60)
+print(d1["python"])
+print(d1)
 
+print("size",len(d1))
+print("String",str(d1))
 print("cheks",d1.buckets[0].traverse())
