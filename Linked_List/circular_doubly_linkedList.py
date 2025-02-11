@@ -93,7 +93,16 @@ class CDLL:
             else:
                 self.start.prv.prv.next = self.start
                 self.start.prv= self.start.prv.prv                
-                
+
+    def Delete_After_Ele(self, ele):
+        if ele== self.start.prv:
+            self.Delete_Last()
+            
+        if ele == self.start:
+            self.Delete_First()
+        else:
+            ele.prv.next = ele.next
+            ele.next.prv = ele.prv       
 
 MyList = CDLL()
 MyList.Insert_At_First(10)
@@ -107,4 +116,9 @@ MyList.Delete_First()
 # MyList.Delete_Last()
 print(end="\n")
 MyList.Print_All()
+MyList.Delete_After_Ele(MyList.search(10))
+print(end="\n")
+
+MyList.Print_All()
+
             
