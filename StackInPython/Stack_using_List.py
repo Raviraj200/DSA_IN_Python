@@ -23,6 +23,7 @@ class Stack:
     def Size(self):
         return len(self.items)
 
+
 s1 = Stack()
 s1.Push(10)
 s1.Push(20)
