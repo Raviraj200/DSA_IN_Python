@@ -19,7 +19,7 @@ graph={
     'E': {'B', 'H'},
     'F': {'C'},
     'G': {'C'},
-    'H': {'E'}
+    'H': {'E'} 
 }
 
 print("Starting node is A:")

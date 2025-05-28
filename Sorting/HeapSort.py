@@ -23,14 +23,25 @@ class Heap:
             return "List is Empty"
         else:
             return self.heap[0]
+    # def Delete(self , ele):
+       
+    #     if len(self.heap) !=0:
+    #         newlise=[]
+    #         for i in self.heap:
+    #             if i != ele:
+    #                 newlise.append(i)
+               
+    #         self.CreateHeap(newlise)             
+                
     def PrintAll(self):
         for  i in self.heap:
             print(i)                       
 
 
 
-list = [40,70,10,90,60,30,50,20,80]
+list = [70,10,90,60,30,50,40,20,80]
 c= Heap()
 c.CreateHeap(list)
 c.PrintAll()
-print(c.TopEle())
+# print(c.TopEle(),"\n")
+print("********************************************")
