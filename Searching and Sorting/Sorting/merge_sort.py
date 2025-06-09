@@ -65,7 +65,7 @@ def margeSort(arr):
     right= arr[mid:]
 
     left = margeSort(left)
-    right = margeSort(right)
+    right = margeSort(right) 
 
     return merge_sorted(left,right)
 arr=[4,53,2,1,5,6,8,9,50]
